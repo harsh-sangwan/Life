@@ -1,0 +1,38 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Dos or Donts</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeNewDnds()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createDnds(dnds)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Date : </span>
+          <input type="date" ng-model="dnds.date">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Source : </span>
+          <input type="text" ng-model="dnds.source">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Description : </span>
+          <input type="text" ng-model="dnds.description">
+        </label>
+        <label class="item item-content">
+          <center>Do / Don't</center>
+        </label>
+               
+        <div class="row">
+          <div class="col"><ion-radio ng-model="dnds.choice" ng-value="'A'">Dos</ion-radio></div>
+          <div class="col"><ion-radio ng-model="dnds.choice" ng-value="'B'">Donts</ion-radio></div>
+        </div>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Dos or Donts</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

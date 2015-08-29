@@ -1,0 +1,63 @@
+<ion-view view-title="Projects">
+  	<ion-nav-buttons side="secondary">
+        <button class="button button-icon ion-compose" ng-click="newProject()"></button>
+    </ion-nav-buttons>
+
+
+    <ion-tabs class="tabs-balanced">
+
+        <ion-tab title="New"  >
+            <ion-nav-view name="buttons-tab"></ion-nav-view>
+            	<h4>Stooges</h4>
+            	<h4>Stooges</h4>
+            <ion-content scroll="true" padding="true">
+                <ion-list show-delete="false" can-swipe="true" overflow-scoll="true">
+              
+                  	<ion-item  ng-repeat="newl in news" on-swipe-right="news.splice($index, 1)" align="center"><strong>Project Name : </strong>{{newl.name}}<br />Description : {{newl.des}}<br />Deadline : {{newl.dl | date}}<br /><strong>Priority : </strong>{{newl.pri === 'A' ? "High" : newl.pri === 'B' ? "Med" : "Low"}}<br />Days to finish : {{newl.tf}}
+                  
+                     <!--<ion-delete-button class="ion-minus-circled" ng-click="news.splice($index, 1)"></ion-delete-button> -->        
+
+                  	</ion-item>
+                    
+                </ion-list>                
+            </ion-content>
+          </ion-tab>
+
+
+          <ion-tab title="Progress"  >
+            <ion-nav-view name="buttons-tab"></ion-nav-view>
+            	<h4>Stooges</h4><h4>Stooges</h4>
+          <ion-content scroll="true" padding="true">
+                <ion-list show-delete="false" can-swipe="true">
+           
+                  	<ion-item  ng-repeat="pro in prog" on-swipe-right="progress.splice($index, 1)" align="center"><strong>Project Name : </strong>{{pro.name}}<br />Description : {{pro.des}}<br />Deadline : {{pro.dl | date}}<br /><strong>Priority : </strong>{{pro.pri === 'A' ? "High" : pro.pri === 'B' ? "Med" : "Low"}}<br />Days to finish : {{pro.tf}}
+                  
+                     <ion-delete-button class="ion-minus-circled" ng-click="prog.splice($index, 1)"></ion-delete-button>         
+
+                  	</ion-item>
+                 
+                </ion-list>
+                
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab title="Done"  >
+            <ion-nav-view name="buttons-tab"></ion-nav-view>
+            	<h4>Stooges</h4>
+            	<h4>Stooges</h4>
+          <ion-content scroll="true" padding="true">
+                <ion-list show-delete="false" can-swipe="true">
+
+                  	<ion-item  ng-repeat="don in done" on-swipe-right="dones.splice($index, 1)" align="center"><strong>Project Name : </strong>{{don.name}}<br />Description : {{don.des}}<br />Deadline : {{don.dl | date}}<br /><strong>Priority : </strong>{{don.pri === 'A' ? "High" : don.pri === 'B' ? "Med" : "Low"}}<br />Days to finish : {{don.tf}}
+                  
+                     <ion-delete-button class="ion-minus-circled" ng-click="done.splice($index, 1)"></ion-delete-button>         
+
+                  	</ion-item>
+             
+                </ion-list>
+                </ion-content>
+           
+          </ion-tab>
+
+        </ion-tabs>
+</ion-view>

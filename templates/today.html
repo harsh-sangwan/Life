@@ -1,0 +1,37 @@
+<ion-view view-title="Today">
+  <ion-nav-buttons side="secondary">
+            <button class="button button-icon ion-compose" ng-click="newToday()"></button>
+        </ion-nav-buttons>
+
+        
+        <ion-tabs class="tabs-balanced">
+
+          <ion-tab title="Planned" >
+            <ion-nav-view name="buttons-tab"></ion-nav-view>
+            <h4>Stooges</h4>
+            <h4>Stooges</h4>
+           <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+                
+                  <ion-item ng-repeat="plan in plans" on-swipe-right="dones.push(plans[$index]) && plans.splice($index, 1)" align="center">{{plan.tdate | date:'h:mma'}}<br />{{plan.tname}}<br />{{plan.tdes}}<br /></ion-item>
+               
+                </ion-list>
+           </ion-content>
+            
+          </ion-tab>
+
+          <ion-tab title="Done">
+            <ion-nav-view name="list-tab"></ion-nav-view>
+             <h4>Stooges</h4>
+             <h4>Stooges</h4>
+          <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+                
+                  <ion-item ng-repeat="done in dones" on-swipe-right="dones.splice($index, 1)" align="center">{{done.tdate | date:'h:mma'}}<br />{{done.tname}}<br />{{done.tdes}}<br /></ion-item>
+                
+                </ion-list>
+              </ion-content>
+          </ion-tab>          
+
+        </ion-tabs>
+</ion-view>

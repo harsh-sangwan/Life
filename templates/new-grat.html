@@ -1,0 +1,26 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Gratitude</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeNewGrat()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createGrat(grat)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input type="date" ng-model="grat.date">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">I am Grateful for : </span>
+          <input type="text" ng-model="grat.description">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Gratitude</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

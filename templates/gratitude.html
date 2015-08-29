@@ -1,0 +1,13 @@
+<ion-view view-title="Gratitude">
+  <ion-nav-buttons side="secondary">
+           <button class="button button-icon ion-compose" ng-click="newGrat()"></button>
+        </ion-nav-buttons>
+
+        <h4>Stooges</h4>
+        <ion-content scroll="true" padding="true">
+            <ion-list can-swipe="true">
+              <ion-item ng-repeat="grat in grats" on-swipe-right="grats.splice($index, 1)" align="center"><strong>{{grat.gdate | date}}</strong><br />I am grateful for {{grat.gdes}}</ion-item>
+
+            </ion-list>
+         </ion-content>
+</ion-view>

@@ -1,0 +1,64 @@
+<ion-view view-title="Wealth">
+  <ion-nav-buttons side="secondary">
+            <button class="button button-icon ion-compose" ng-click="newFin()"></button>
+        </ion-nav-buttons>
+
+
+        <ion-tabs class="tabs-balanced">
+
+          <ion-tab title="Income"  >
+            <ion-nav-view name="buttons-tab"></ion-nav-view>
+            <h4>Stooges</h4>
+            <h4>Stooges</h4>
+          <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+        
+                  <ion-item ng-repeat="income in incomes" on-swipe-right="incomes.splice($index, 1)" align="center">{{income.fdate | date}}<br />{{income.fname}}<br />{{income.fval | currency:"&#8377;"}}</ion-item>
+              
+                </ion-list>
+             </ion-content>
+          </ion-tab>
+
+
+          <ion-tab title="Expenditure" >
+            <ion-nav-view name="list-tab"></ion-nav-view>
+            <h4>Stooges</h4>
+            <h4>Stooges</h4>
+           <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+               
+                  <ion-item ng-repeat="exp in expenses" on-swipe-right="expenses.splice($index, 1)" align="center">{{exp.fdate | date}}<br />{{exp.fname}}<br />{{exp.fval | currency:"&#8377;"}}</ion-item>
+            
+                </ion-list>
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab title="Assets">
+            <ion-nav-view name="form-tab"></ion-nav-view>
+            <h4>Stooges</h4>
+            <h4>Stooges</h4>
+           <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+           
+                  <ion-item ng-repeat="asset in assets" on-swipe-right="assets.splice($index, 1)" align="center">{{asset.fdate | date}}<br />{{asset.fname}}<br />{{asset.fval | currency:"&#8377;"}}</ion-item></ion-scroll>
+
+                </ion-list>
+            </ion-content>
+          </ion-tab>
+
+          <ion-tab title="Liabilities">
+            <ion-nav-view name="form-tab"></ion-nav-view>
+            <h4>Stooges</h4>
+            <h4>Stooges</h4>
+          <ion-content scroll="true" padding="true">
+                <ion-list can-swipe="true">
+                
+                  <ion-item ng-repeat="lia in liability" on-swipe-right="liability.splice($index, 1)" align="center">{{lia.fdate | date}}<br />{{lia.fname}}<br />{{lia.fval | currency:"&#8377;"}}</ion-item>
+              
+                </ion-list>
+       </ion-content>
+          </ion-tab>
+
+        </ion-tabs>
+
+</ion-view>

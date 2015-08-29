@@ -1,0 +1,57 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Book</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeNewBook()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+  
+    <form ng-submit="createBook(book)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Book's Name : </span>
+          <input type="text" ng-model="book.name">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Author's Name : </span>
+          <input type="text" ng-model="book.author">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Description : </span>
+          <input type="text" ng-model="book.description">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Genre : </span>
+          <input type="text" ng-model="book.genre">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Fav-o-Meter (10): </span>
+          <input type="number" ng-model="book.favs">
+        </label>
+
+       
+        <label class="item item-content">
+          <center>Fresh / Reading / Completed</center>
+        </label>
+               
+        <div class="row">
+          <div class="col"><ion-radio ng-model="book.wchoice" ng-value="'D'" name="work">Fresh</ion-radio></div>
+          <div class="col"><ion-radio ng-model="book.wchoice" ng-value="'E'" name="work">Reading</ion-radio></div>
+          <div class="col"><ion-radio ng-model="book.wchoice" ng-value="'F'" name="work">Completed</ion-radio></div>
+        </div>
+
+       
+        
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Book</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

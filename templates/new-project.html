@@ -1,0 +1,59 @@
+
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Project</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeNewProject()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createProject(project)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Project Name : </span>
+          <input type="text" ng-model="project.name">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Description : </span>
+          <input type="text" ng-model="project.description">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Deadline : </span>
+          <input type="date" ng-model="project.deadline">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Days to Finish : </span>
+          <input type="number" ng-model="project.ttof">
+        </label>
+
+        <label class="item item-content">
+          <center>New / Progress / Done</center>
+        </label>
+               
+        <div class="row">
+          <div class="col"><ion-radio ng-model="project.wchoice" ng-value="'D'" name="work">New</ion-radio></div>
+          <div class="col"><ion-radio ng-model="project.wchoice" ng-value="'E'" name="work">Progress</ion-radio></div>
+          <div class="col"><ion-radio ng-model="project.wchoice" ng-value="'F'" name="work">Done</ion-radio></div>
+        </div>
+
+        <label class="item item-content">
+          <center>Priority</center>
+        </label>
+               
+        <div class="row">
+          <div class="col"><ion-radio ng-model="project.priority" ng-value="'A'" name="Priority">High</ion-radio></div>
+          <div class="col"><ion-radio ng-model="project.priority" ng-value="'B'" name="Priority">Medium</ion-radio></div>
+          <div class="col"><ion-radio ng-model="project.priority" ng-value="'C'" name="Priority">Low</ion-radio></div>
+        </div>
+
+        
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Project</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
